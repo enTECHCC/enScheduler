@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122205753) do
+ActiveRecord::Schema.define(version: 20171123235319) do
 
   create_table "seniors", force: :cascade do |t|
     t.text "first_name"
-    t.text "last_name"
-    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "last_intial"
+    t.text "info"
   end
 
 end
