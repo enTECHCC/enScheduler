@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20171123235319) do
     t.text "first_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "last_intial"
+    t.text "last_initial"
     t.text "info"
   end
 
