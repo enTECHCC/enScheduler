@@ -1,5 +1,5 @@
 <ul>
   <% @seniors.each do |senior| %>
-    <li><%= link_to "#{senior.first_name} #{senior.last_initial}", senior_path(senior) %></li>
+    <li><%= link_to senior.name, senior_path(senior) %></li>
   <% end %>
 </ul>
