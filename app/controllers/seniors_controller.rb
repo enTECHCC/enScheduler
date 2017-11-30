@@ -1,3 +1,4 @@
+require 'pry'
 class SeniorsController < ApplicationController
   def new
   end
