@@ -1,0 +1,27 @@
+<h1>Register New User<h1>
+
+<%= form_with scope: :user, local: true, url: users_path do |form| %>
+  <p>
+    <%= form.label :first_name%><br>
+    <%= form.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= form.label :last_name%><br>
+    <%= form.text_field :last_name %>
+  </p>
+
+  <p>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+  </p>
+
+  <p>
+    <%= form.label :password%><br>
+    <%= form.text_field :password %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
