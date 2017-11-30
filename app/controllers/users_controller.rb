@@ -1,10 +1,9 @@
-require 'pry'
+#require 'pry'
 class UsersController < ApplicationController
-	
   http_basic_authenticate_with name: "ddh", password: "secret", except: [:new,:create]
 
   def new
-	end
+  end
 
   def login
   end 
@@ -16,17 +15,17 @@ class UsersController < ApplicationController
   end
   
   def req
-    @log = User.find_by email: params[:user][:email]
-    if(params[:user][:password]==@log[:password])
-      redirect_to @log
+    log = User.find_by email: params[:user][:email]
+    if(params[:user][:password]==log[:password])
+      redirect_to log
     else
       redirect_to '/users/login/failure'
     end
   end
 
-	def create
-    @user = User.new(user_params)
-    @user.save
+  def create
+    user = User.new(user_params)
+    user.save
     redirect_to '/users/new/success'
   end
     
