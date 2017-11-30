@@ -10,10 +10,10 @@
 
 <p>
   <strong>Created at:</strong>
-  <%= @senior.created_at %>
+  <%= @senior.created_at.strftime("%Y-%m-%d %H:%M") %>
 </p>
 
 <p>
   <strong>Updated at:</strong>
-  <%= @senior.updated_at %>
+  <%= @senior.updated_at.strftime("%Y-%m-%d %H:%M") %>
 </p>
