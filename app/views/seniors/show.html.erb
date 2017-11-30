@@ -1,11 +1,6 @@
 <p>
-  <strong>First Name:</strong>
-  <%= @senior.first_name %>
-</p>
-
-<p>
-  <strong>Last Initial:</strong>
-  <%= @senior.last_initial %>
+  <strong>Full name:</strong>
+  <%= @senior.cat_senior_name(@senior.first_name, @senior.last_initial) %>
 </p>
 
 <p>
