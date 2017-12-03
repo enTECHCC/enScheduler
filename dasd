@@ -1,0 +1,102 @@
+[33mcommit b693cfa1f7669e234603ea46d80b4fcf7c35dc74[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Maya Grab <maya.grab@gmail.com>
+Date:   Wed Nov 22 17:41:37 2017 -0500
+
+    first commit, created basic MVC for Senior
+
+ .gitignore                                         |  28 [32m+++[m
+ .irbrc                                             |   3 [32m+[m
+ Gemfile                                            |  55 [32m++++++[m
+ Gemfile.lock                                       | 198 [32m+++++++++++++++++++++[m
+ README.md                                          |   4 [32m+[m
+ Rakefile                                           |   6 [32m+[m
+ app/assets/config/manifest.js                      |   3 [32m+[m
+ app/assets/images/.keep                            |   0
+ app/assets/javascripts/application.js              |  15 [32m++[m
+ app/assets/javascripts/cable.js                    |  13 [32m++[m
+ app/assets/javascripts/channels/.keep              |   0
+ app/assets/javascripts/seniors.coffee              |   3 [32m+[m
+ app/assets/javascripts/welcome.coffee              |   3 [32m+[m
+ app/assets/stylesheets/application.css             |  15 [32m++[m
+ app/assets/stylesheets/seniors.scss                |   3 [32m+[m
+ app/assets/stylesheets/welcome.scss                |   3 [32m+[m
+ app/channels/application_cable/channel.rb          |   4 [32m+[m
+ app/channels/application_cable/connection.rb       |   4 [32m+[m
+ app/controllers/application_controller.rb          |   3 [32m+[m
+ app/controllers/concerns/.keep                     |   0
+ app/controllers/seniors_controller.rb              |  20 [32m+++[m
+ app/controllers/welcome_controller.rb              |   4 [32m+[m
+ app/helpers/application_helper.rb                  |   2 [32m+[m
+ app/helpers/seniors_helper.rb                      |   2 [32m+[m
+ app/helpers/welcome_helper.rb                      |   2 [32m+[m
+ app/jobs/application_job.rb                        |   2 [32m+[m
+ app/mailers/application_mailer.rb                  |   4 [32m+[m
+ app/models/application_record.rb                   |   3 [32m+[m
+ app/models/concerns/.keep                          |   0
+ app/models/senior.rb                               |   2 [32m+[m
+ app/views/layouts/application.html.erb             |  14 [32m++[m
+ app/views/layouts/mailer.html.erb                  |  13 [32m++[m
+ app/views/layouts/mailer.text.erb                  |   1 [32m+[m
+ app/views/seniors/new.html.erb                     |  22 [32m+++[m
+ app/views/seniors/show.html.erb                    |  14 [32m++[m
+ app/views/welcome/index.html.erb                   |   1 [32m+[m
+ bin/bundle                                         |   3 [32m+[m
+ bin/rails                                          |   9 [32m+[m
+ bin/rake                                           |   9 [32m+[m
+ bin/setup                                          |  38 [32m++++[m
+ bin/spring                                         |  17 [32m++[m
+ bin/update                                         |  29 [32m+++[m
+ bin/yarn                                           |  11 [32m++[m
+ config.ru                                          |   5 [32m+[m
+ config/application.rb                              |  18 [32m++[m
+ config/boot.rb                                     |   3 [32m+[m
+ config/cable.yml                                   |  10 [32m++[m
+ config/database.yml                                |  25 [32m+++[m
+ config/environment.rb                              |   5 [32m+[m
+ config/environments/development.rb                 |  54 [32m++++++[m
+ config/environments/production.rb                  |  91 [32m++++++++++[m
+ config/environments/test.rb                        |  42 [32m+++++[m
+ .../application_controller_renderer.rb             |   8 [32m+[m
+ config/initializers/assets.rb                      |  14 [32m++[m
+ config/initializers/backtrace_silencers.rb         |   7 [32m+[m
+ config/initializers/cookies_serializer.rb          |   5 [32m+[m
+ config/initializers/filter_parameter_logging.rb    |   4 [32m+[m
+ config/initializers/inflections.rb                 |  16 [32m++[m
+ config/initializers/mime_types.rb                  |   4 [32m+[m
+ config/initializers/wrap_parameters.rb             |  14 [32m++[m
+ config/locales/en.yml                              |  33 [32m++++[m
+ config/puma.rb                                     |  56 [32m++++++[m
+ config/routes.rb                                   |   8 [32m+[m
+ config/secrets.yml                                 |  32 [32m++++[m
+ config/spring.rb                                   |   6 [32m+[m
+ db/migrate/20171122205753_create_seniors.rb        |  11 [32m++[m
+ db/schema.rb                                       |  23 [32m+++[m
+ db/seeds.rb                                        |   7 [32m+[m
+ lib/assets/.keep                                   |   0
+ lib/tasks/.keep                                    |   0
+ log/.keep                                          |   0
+ package.json                                       |   5 [32m+[m
+ public/404.html                                    |  67 [32m+++++++[m
+ public/422.html                                    |  67 [32m+++++++[m
+ public/500.html                                    |  66 [32m+++++++[m
+ public/apple-touch-icon-precomposed.png            |   0
+ public/apple-touch-icon.png                        |   0
+ public/favicon.ico                                 |   0
+ public/robots.txt                                  |   1 [32m+[m
+ test/application_system_test_case.rb               |   5 [32m+[m
+ test/controllers/.keep                             |   0
+ test/controllers/seniors_controller_test.rb        |   7 [32m+[m
+ test/controllers/welcome_controller_test.rb        |   9 [32m+[m
+ test/fixtures/.keep                                |   0
+ test/fixtures/files/.keep                          |   0
+ test/fixtures/seniors.yml                          |  11 [32m++[m
+ test/helpers/.keep                                 |   0
+ test/integration/.keep                             |   0
+ test/mailers/.keep                                 |   0
+ test/models/.keep                                  |   0
+ test/models/senior_test.rb                         |   7 [32m+[m
+ test/system/.keep                                  |   0
+ test/test_helper.rb                                |   9 [32m+[m
+ tmp/.keep                                          |   0
+ vendor/.keep                                       |   0
+ 95 files changed, 1340 insertions(+)
